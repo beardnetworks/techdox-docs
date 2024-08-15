@@ -22,6 +22,7 @@ services:
     container_name: homepage
     ports:
       - 3000:3000
+ restart: unless-stopped         # Ensures the container restarts automatically unless manually stopped.
     volumes:
       - ./config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
